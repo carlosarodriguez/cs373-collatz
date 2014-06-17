@@ -42,17 +42,21 @@ def collatz_eval (i, j) :
         i = j
         j = temp
 
+    m = j // 2
+    if (i < m) :
+        i = m
+
     max_length = 0
     for n in range (i, j+1) :
         count = 1
         t = n
         while t > 1 :
             if t % 2 == 0 :
-                t /= 2
+                t //= 2
                 count += 1
             else :
-                t = (3 * t) + 1
-                count += 1 
+                t = t + (t >> 1) + 1
+                count += 2 
         if count > max_length :
             max_length = count
     
