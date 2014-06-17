@@ -32,11 +32,23 @@ class TestCollatz (TestCase) :
     # read
     # ----
 
-    def test_read (self) :
+    def test_read_1 (self) :
         r    = StringIO("1 10\n100 200\n201 210\n900 1000\n")
         i, j = collatz_read(r)
         self.assertEqual(i,  1)
         self.assertEqual(j, 10)
+
+    def test_read_2 (self):
+        r    = StringIO("20 2\n")
+        i, j = collatz_read(r)
+        self.assertEqual(i, 20)
+        self.assertEqual(j,  2)
+
+    def test_read_3 (self):
+        r    = StringIO("11 17\n9 3\n")
+        i, j = collatz_read(r)
+        self.assertEqual(i, 11)
+        self.assertEqual(j, 17)
 
     # ----
     # eval
@@ -55,27 +67,49 @@ class TestCollatz (TestCase) :
         self.assertEqual(v, 89)
 
     def test_eval_4 (self) :
-        v = collatz_eval(900, 1000)
+        v = collatz_eval(1000, 900)
         self.assertEqual(v, 174)
 
     # -----
     # print
     # -----
 
-    def test_print (self) :
+    def test_print_1 (self) :
         w = StringIO()
         collatz_print(w, 1, 10, 20)
         self.assertEqual(w.getvalue(), "1 10 20\n")
+
+    def test_print_2 (self) :
+        w = StringIO()
+        collatz_print(w, 1,  9, 93)
+        self.assertEqual(w.getvalue(), "1 9 93\n")
+
+    def test_print_3 (self) :
+        w = StringIO()
+        collatz_print(w, 20, 2, 13)
+        self.assertEqual(w.getvalue(), "20 2 13\n")
 
     # -----
     # solve
     # -----
 
-    def test_solve (self) :
+    def test_solve_1 (self) :
         r = StringIO("1 10\n100 200\n201 210\n900 1000\n")
         w = StringIO()
         collatz_solve(r, w)
         self.assertEqual(w.getvalue(), "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
+
+    def test_solve_2 (self) :
+        r = StringIO("1000 900\n")
+        w = StringIO()
+        collatz_solve(r, w)
+        self.assertEqual(w.getvalue(), "1000 900 174\n")
+
+    def test_solve_2 (self) :
+        r = StringIO("200 203\n1 10\n")
+        w = StringIO()
+        collatz_solve(r, w)
+        self.assertEqual(w.getvalue(), "200 203 40\n1 10 20\n")
 
 # ----
 # main
