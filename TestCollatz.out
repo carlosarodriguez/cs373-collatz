@@ -1,0 +1,6 @@
+candresr@riesen-chocolate-chews:/v/filer4b/v38q001/candresr/Desktop/CS373/cs373-collatz$ coverage3 run --branch TestCollatz.py
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK
