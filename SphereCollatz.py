@@ -28,12 +28,46 @@ def collatz_read (r) :
 # collatz_eval
 # ------------
 
+# def collatz_eval (i, j) :
+#     """
+#     i is the beginning of the range, inclusive
+#     j is the end       of the range, inclusive
+#     return the max cycle length in the range [i, j]
+#     """
+#     assert i > 0
+#     assert j > 0
+
+#     if j < i :
+#         temp = i
+#         i = j
+#         j = temp
+
+#     m = j // 2
+#     if (i < m) :
+#         i = m
+
+#     max_length = 0
+#     for n in range (i, j+1) :
+#         count = 1
+#         t = n
+#         while t > 1 :
+#             if t % 2 == 0 :
+#                 t //= 2
+#                 count += 1
+#             else :
+#                 t = t + (t >> 1) + 1
+#                 count += 2 
+#         if count > max_length :
+#             max_length = count
+    
+#     assert max_length > 0
+#     return max_length
+
+cache = [0 for x in range (1000000)]
+
 def collatz_eval (i, j) :
-    """
-    i is the beginning of the range, inclusive
-    j is the end       of the range, inclusive
-    return the max cycle length in the range [i, j]
-    """
+    global cache
+
     assert i > 0
     assert j > 0
 
@@ -41,27 +75,38 @@ def collatz_eval (i, j) :
         temp = i
         i = j
         j = temp
-
-    m = j // 2
-    if (i < m) :
-        i = m
-
-    max_length = 0
-    for n in range (i, j+1) :
-        count = 1
-        t = n
-        while t > 1 :
-            if t % 2 == 0 :
-                t //= 2
-                count += 1
-            else :
-                t = t + (t >> 1) + 1
-                count += 2 
-        if count > max_length :
-            max_length = count
     
-    assert max_length > 0
-    return max_length
+    cache[0] = 0
+    cache[1] = 1
+
+    max = 0
+    count = 0
+    for t in range (i, j+1) :
+        count = 0
+        if cache[t] != 0 :
+            count = cache[t]
+
+        else :  #t is not in the cache
+            t2 = t;
+            while t > 1:
+                if t % 2 == 0 :
+                    t //= 2
+                    count += 1
+                else :
+                    t = t + (t >> 1) + 1
+                    count += 2
+
+                if t < 1000000 and cache[t] != 0 :
+                    count += cache[t]
+                    break
+            t = t2
+            cache[t] = count
+
+        if count > max :
+            max = count
+    
+    assert max > 0
+    return max
 
 # -------------
 # collatz_print
