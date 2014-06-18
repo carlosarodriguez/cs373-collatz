@@ -1,0 +1,59 @@
+commit c3c83f8d0fbdd5fb949a03586f13281d53bc63d2
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 20:44:17 2014 -0500
+
+    Ran pydoc on Collatz.py and created Collatz.html
+
+commit f63516a828872b9eb7b5737397b7f7c0d67132a3
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 20:40:07 2014 -0500
+
+    Implemented the cache in Collatz.py, passed all tests. Copied the algorithm into SphereColl
+
+commit b768a7f9f38964b03f0c6807c449691816ddf9f7
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 16:00:48 2014 -0500
+
+    Created AcceptanceTestMaker.c++ to create the 1000 lines of acceptance tests
+
+commit ecd06b59035a0e0cdb7744ed9267fe1e0ae18b3d
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 15:47:47 2014 -0500
+
+    Included the optimizations in SphereCollatz.py and debugged it until it passed all the test
+
+commit e370869b67930da0c133ac3ec460659fd19886c9
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 15:12:57 2014 -0500
+
+    Created SphereCollatz.py, ran it with time limit exceeded
+
+commit f02a567f55b8fd7675e3bd4a0edc256de99357e8
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 14:14:13 2014 -0500
+
+    Debugged collatz_eval() so it passes all the tests in TestCollatz.py
+
+commit 879188e37e75ab6d294c00e1430071ff8c2d816c
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 13:05:03 2014 -0500
+
+    Finished creating the unit tests in TestCollatz.py
+
+commit bd7574754fe91af1e88eec6d2567f581cb7650ca
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 12:35:11 2014 -0500
+
+    As expected, RunCollatz.py and TestCollatz.py failed (missing implementation)
+
+commit 41f2208294969c397b5dd745574182bafe64ea7f
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Sat Jun 14 22:11:27 2014 -0500
+
+    Copied over the skeleton code files from the class repo
+
+commit ae7a4b3da0f75b0098915ee30e4cf14e177a4b63
+Author: Carlos Andres Rodriguez <cyberthug@users.noreply.github.com>
+Date:   Sat Jun 14 20:58:50 2014 -0500
+
+    Initial commit
