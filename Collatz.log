@@ -1,3 +1,15 @@
+commit 88aee423188164d3d65cef2834f0be2442c8489d
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 21:23:50 2014 -0500
+
+    I was finally able to get my acceptance tests in order as well as my TestCollatz.out
+
+commit 6b7d75bdd0cac9a8449e8de22b5266e26960a0c9
+Author: Carlos A. Rodriguez <car3564@utexas.edu>
+Date:   Tue Jun 17 20:56:26 2014 -0500
+
+    Created the commit log
+
 commit c3c83f8d0fbdd5fb949a03586f13281d53bc63d2
 Author: Carlos A. Rodriguez <car3564@utexas.edu>
 Date:   Tue Jun 17 20:44:17 2014 -0500
